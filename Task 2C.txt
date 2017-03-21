@@ -1,0 +1,118 @@
+TASK – 2 C
+Approaches used -	1- Breadth First Search (BFS)
+			2- Depth First Search (DFS)
+
+1.	Breadth First Search
+
+Breadth First Search is a non-recursive algorithm that traverses a graph breadthwise.
+All the visited nodes are added to a queue/list to mark them as visited and the next breadth is reached when a dead end is encountered.
+
+BFS Implementation in task 2B :
+
+Data Structures used for Implementation :
+-	Frontier  : List
+-	Wishlist : Queue.
+
+Conditions to be satisfied :
+- Size of Frontier and Wishlist together to be less than 1000
+- depth atmost to be 5
+
+		Step 1: Pass the seed to the crawl function. (seed acts as the root node).
+			while (size of both Frontier and Wishlist < 1000) do – condition to be satisfied
+
+		Step 2:   a)
+			  If Wishlist is empty, make seed as the currenturl.
+ 			  Add it to the Frontier and also add a special character, in this case “#”
+
+			  b)
+			  Else if Wishlist is not empty, Remove the first element from Wishlist
+			  And make it currenturl  
+
+			  c)
+			  If the currenturl already exists in the Frontier  then repeat case b.
+
+
+               Step 3: A call is made to the crawl(), whiich performs the crawling of the given url
+
+	       Step 4: The results of crawl() are added to the Wishlist after refining them based on the requirement.
+
+	       Step 5: Goto Step 2.
+		
+	       The above mentioned steps are repeated until the conditions are no longer satisfied. 
+
+
+2.	Depth First Search
+
+Depth First Search is a non-recursive algorithm that traverses a graph depthwise.
+All the visited nodes are added to a queue/list to mark them as visited and the next depth is reached whenever a node is visited provided that node has children.
+
+DFS Implementation in task 2B :
+
+Data Structures used for Implementation :
+-	Frontier  : List
+
+Conditions to be satisfied :
+- Size of Frontier and Wishlist together to be less than 1000
+- depth atmost to be 5
+
+		Step 1:  Pass the seed url and the keyword to the crawl function. (seed acts as the root node).
+			 while (size of both Frontier and Wishlist < 1000) do – condition to be satisfied
+
+		Step 2:  seed url is added to the Frontier and Crawl() is performed on this url.
+			 
+               	Step 3:  The first child of the seed is added to the Frontier and passed to crawl().
+
+       	        Step 4: The first node of every parent is added to the Frontier and is passed to crawl().
+		
+	        The above mentioned steps are repeated until either of the conditions are no longer satisfied. 
+
+***************************************************************************************************************************************************************************************************************************************
+
+In Task 2 A, which is focused crawling using Breadth First Search algorithm,
+
+		Pages Crawled - 8
+		Links Retrived with "solar" - 1000
+
+Thus to retrieve about 1000 links by satisfying both the conditions, BFS crawled 8 pages.
+
+
+In Task 2 A, which is focused crawling using Breadth First Search algorithm,
+
+		Pages Crawled - 236
+		Links Retrived with "solar" - 236
+
+Thus 236 links that contain the key word "solar" are retieved when 1000 unique urls were crawled 
+by satisfying both the mentioned conditions.
+   
+***************************************************************************************************************************************************************************************************************************************
+
+			Breadth First Search (A)						Depth First Search (B)
+
+	1  https://en.wikipedia.org/wiki/Sustainable_energy		            1  https://en.wikipedia.org/wiki/Sustainable_energy
+
+	2  https://en.wikipedia.org/wiki/Sustainable_energy 			    2 https://en.wikipedia.org/wiki/Passive_solar_building_design 
+
+	3  https://en.wikipedia.org/wiki/Passive_solar_building_design 		    3 https://en.wikipedia.org/wiki/Solar_energy 
+
+	4  https://en.wikipedia.org/wiki/Solar_energy 				    4 https://en.wikipedia.org/wiki/Solar_Energy_(journal)
+
+	5  https://en.wikipedia.org/wiki/Solar_heating 			            5 https://en.wikipedia.org/wiki/Solar_heating 
+
+	6  https://en.wikipedia.org/wiki/Solar_photovoltaics  			    6 https://en.wikipedia.org/wiki/International_Solar_Energy_Society 
+
+
+Column A shows the top 6 URLs when focused crawling was implemented using Breadth First Search Algorithm
+
+Column B shows the top 6 URLs when focused crawling was implemented using depth First Search Algorithm 
+
+
+
+
+
+
+
+
+
+
+
+

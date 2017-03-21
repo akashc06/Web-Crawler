@@ -1,0 +1,20 @@
+Steps for an efficient merging procedure for 2 independent runs
+
+Step 1: Sort both the results alphabetically
+
+Step 2: Compare the sorted list of URLs and check for duplicates and remove the duplicates if any.
+	This step will reduce the redundancies that exist and thus will make the merging easier
+
+Step 3: Now combine both the list and again sort alphabetically
+
+Step 4: Pass this sorted list through a ranking algorithm that ranks the list depending on the user revies, popularity and credibility.
+
+Step 5: The low ranked URLs are checked if they have a link to the Top ranked ones.
+	If so remove the low ranked URLs.
+
+Step 6: Now check if any URL points to another URL within the list, if so remove them.
+
+Step 7: Pass the list again through the ranking algorithm.
+
+Step 8: If the length is less than or equal to 1000, STOP.
+	Else remove the low ranked URLs as they will have less popularity and low reviews.  
